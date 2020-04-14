@@ -34,7 +34,7 @@ public class Play{
 	} while(Main.exiter);
 }
 
-	public static void playAdv() throws InterruptedException,MalformedURLException {
+	public static void playAdv(double mult) throws InterruptedException,MalformedURLException {
 		MeasureInfo mi = new MeasureInfo();
 		int j = 0;
 		//for (int j = 0; j< sing.sang.measureInfoList.size();j++){
@@ -51,11 +51,11 @@ public class Play{
 		    
 		    if (mi.getAccentedNoteBoolean(i) == true){
 		        play();
-		        Thread.sleep((long)(60000.0/bpm1-90));
+		        Thread.sleep((long)(60000.0/mult/bpm1-90));
 		    }
 		    else{
 		        play2();
-		        Thread.sleep((long)(60000.0/bpm1-90));
+		        Thread.sleep((long)(60000.0/mult/bpm1-90));
 		    }
 		    
 		}
