@@ -4,7 +4,7 @@ import java.io.FileNotFoundException;
 
 public class Song{
 
-    File db = new File("db.txt");
+    File db = new File("db.csv");
 
     static ArrayList<MeasureInfo> measures = new ArrayList<MeasureInfo>();
     String fullLine;
@@ -18,7 +18,7 @@ public class Song{
         Scanner scan = new Scanner(db);
         while (scan.hasNextLine()){
             this.fullLine = scan.nextLine();
-            this.partialLine  = fullLine.split(" ");
+            this.partialLine  = fullLine.split(",");
             String timeSig = this.partialLine[2] + "/" + this.partialLine[3];
             boolean[] an = new boolean[Integer.parseInt(this.partialLine[2])];
             if (this.partialLine.length > 5){
